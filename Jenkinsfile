@@ -8,9 +8,18 @@ pipeline {
       }
     }
     stage('Deploy to QA') {
-      steps {
-        sleep 5
-        echo 'On dÃ©ploie en Recette'
+      parallel {
+        stage('Deploy to QA') {
+          steps {
+            sleep 5
+            echo 'On dÃ©ploie en Recette'
+          }
+        }
+        stage('qualit�') {
+          steps {
+            echo 'on check la qualit�'
+          }
+        }
       }
     }
     stage('Tests') {
