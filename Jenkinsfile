@@ -10,7 +10,7 @@ pipeline {
     stage('Deploy to QA') {
       steps {
         sleep 5
-        echo 'On déploie en Recette'
+        echo 'On dÃ©ploie en Recette'
       }
     }
     stage('Tests') {
@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Deploy to prod') {
       steps {
-        input 'on d�ploie ??'
+        input(message: 'on deploie ??', ok: 'GO !!')
         echo 'go deploy prod'
       }
     }
